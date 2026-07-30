@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace></RootNamespace>
+    <AssemblyName>ADCP.Tools.Primitives</AssemblyName>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net481</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <!-- Host-plugin variant (IToolPlugin) is superseded by the standalone add-on entry points
+       (AlibreAddOn.vb + PrimitivesAddOn.vb). Exclude it so the DLL has no TheToolStore dependency. -->
+  <ItemGroup>
+    <Compile Remove="PrimitivesPlugin.vb" />
+  </ItemGroup>
+
+  <!-- Bundle the add-on manifest + icon next to the DLL so Alibre can load them. -->
+  <ItemGroup>
+    <None Remove="Primitives.adc" />
+    <None Remove="logo.ico" />
+    <None Remove="logo.png" />
+    <Content Include="Primitives.adc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AlibreAddOn">
+      <HintPath>$(AlibreProgramDir)\AlibreAddOn.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AlibreX">
+      <HintPath>$(AlibreProgramDir)\AlibreX.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

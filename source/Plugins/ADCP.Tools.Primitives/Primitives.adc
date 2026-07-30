@@ -1,0 +1,10 @@
+<AlibreDesignAddOn specificationVersion="2" friendlyName="Primitives">
+   <Author name="ADCP" link="https://github.com/"/>
+   <Copyright>Copyright (c) 2026</Copyright>
+   <DLL type="Managed" loadedWhen="Startup" location="ADCP.Tools.Primitives.dll"/>
+   <Icon location="logo.ico"/>
+   <Menu text="Primitives"/>
+   <Description>Generate parametric 3D primitives (Box, Cylinder, Sphere, Cone) on the active part.</Description>
+   <Workspace type="Always"/>
+   <Property name="Identifier" value="{9EE558C4-FEBF-4AAC-897D-B0A3556A943D}"/>
+</AlibreDesignAddOn>
