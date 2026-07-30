@@ -1,0 +1,8 @@
+<Project>
+
+  <PropertyGroup>
+    <AlibreProgramDir Condition="'$(ALIBRE_PROGRAM_DIR)' != ''">$(ALIBRE_PROGRAM_DIR)\</AlibreProgramDir>
+    <AlibreProgramDir Condition="'$(AlibreProgramDir)' == ''">C:\Program Files\Alibre Design 29.0.0.29060\Program\</AlibreProgramDir>
+  </PropertyGroup>
+
+</Project>

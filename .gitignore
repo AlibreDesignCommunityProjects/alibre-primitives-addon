@@ -1,5 +1,6 @@
 bin/
 obj/
+installer/
 *.user
 .vs/
 reviews/

@@ -1,0 +1,10 @@
+<Project>
+  <!-- Applies to every plugin project: bundle each plugin's icons\*.svg next to its DLL
+       (the per-tool deploy target then copies them into Plugins\<Tool>\icons\). Imported
+       after the SDK default item globs, so the auto-included None items get the metadata. -->
+  <ItemGroup>
+    <None Update="icons\**\*.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
